@@ -1,0 +1,49 @@
+J_to_ftlb = 0.737562; 
+J_to_cal = 0.239006;  
+J_to_eV = 6.242e+18;  
+ftlb_to_J = 1 / J_to_ftlb;
+cal_to_J = 1 / J_to_cal;
+eV_to_J = 1 / J_to_eV;
+
+% User input
+energy = input('Enter the quantity of energy: ');
+current_unit = input('Enter the current units (J, ftlb, cal, eV): ', 's');
+desired_unit = input('Enter the desired units (J, ftlb, cal, eV): ', 's');
+
+% Conversion logic
+if strcmp(current_unit, 'J')
+    if strcmp(desired_unit, 'ftlb')
+        result = energy * J_to_ftlb;
+    elseif strcmp(desired_unit, 'cal')
+        result = energy * J_to_cal;
+    elseif strcmp(desired_unit, 'eV')
+        result = energy * J_to_eV;
+    end
+elseif strcmp(current_unit, 'ftlb')
+    if strcmp(desired_unit, 'J')
+        result = energy * ftlb_to_J;
+    elseif strcmp(desired_unit, 'cal')
+        result = energy * ftlb_to_J * J_to_cal;
+    elseif strcmp(desired_unit, 'eV')
+        result = energy * ftlb_to_J * J_to_eV;
+    end
+elseif strcmp(current_unit, 'cal')
+    if strcmp(desired_unit, 'J')
+        result = energy * cal_to_J;
+    elseif strcmp(desired_unit, 'ftlb')
+        result = energy * cal_to_J * J_to_ftlb;
+    elseif strcmp(desired_unit, 'eV')
+        result = energy * cal_to_J * J_to_eV;
+    end
+elseif strcmp(current_unit, 'eV')
+    if strcmp(desired_unit, 'J')
+        result = energy * eV_to_J;
+    elseif strcmp(desired_unit, 'ftlb')
+        result = energy * eV_to_J * J_to_ftlb;
+    elseif strcmp(desired_unit, 'cal')
+        result = energy * eV_to_J * J_to_cal;
+    end
+end
+
+% Output result
+fprintf('The energy in %s is %.4f %s.\n', desired_unit, result, desired_unit);

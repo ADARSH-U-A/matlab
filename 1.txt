@@ -1,0 +1,15 @@
+% Define the value of x
+x = pi / 5;
+
+% Left-hand side (LHS)
+lhs = cos(x / 2)^2;
+
+% Right-hand side (RHS)
+rhs = (tan(x) + sin(x)) / (2 * tan(x));
+
+% Display the results
+disp('Left-hand side (LHS):');
+disp(lhs);
+
+disp('Right-hand side (RHS):');
+disp(rhs);

@@ -1,0 +1,24 @@
+% Radii of the circles
+R1 = 16;   % Radius of circle C1
+R2 = 6.5;  % Radius of circle C2
+R3 = 12;   % Radius of circle C3
+R4 = 9.5;  % Radius of circle C4
+
+% Distances between centers of tangent circles
+% C1 and C2
+d_C1_C2 = R1 + R2;
+
+% C2 and C3
+d_C2_C3 = R2 + R3;
+
+% C3 and C4
+d_C3_C4 = R3 + R4;
+
+% Using geometry to calculate the distance between C2 and C4
+% Assuming the figure forms a quadrilateral and using the geometry
+% Distance between C2 and C4
+d_C2_C4 = sqrt(d_C2_C3^2 + d_C3_C4^2 - 2 * d_C2_C3 * d_C3_C4 * cos(pi/2)); % Pythagoras as they form right angles
+
+% Display the result
+disp('The distance between C2 and C4 is:');
+disp(d_C2_C4);

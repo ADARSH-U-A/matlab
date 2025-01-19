@@ -1,0 +1,11 @@
+% Define variables
+Ts = 38;      % Constant temperature of the refrigerator (°F)
+T0 = 120;     % Initial temperature of the soda (°F)
+k = 0.45;     % Cooling constant
+t = 3;        % Time in hours
+
+% Calculate the temperature after 3 hours using the formula
+T = Ts + (T0 - Ts) * exp(-k * t);
+
+% Display the result rounded to the nearest degree
+disp(['The temperature of the soda after 3 hours is: ', num2str(round(T)), '°F']);

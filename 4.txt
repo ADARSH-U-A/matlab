@@ -1,0 +1,11 @@
+% Initialize a 6x6 matrix with zeros
+matrix = zeros(6, 6);
+
+% Set the middle two rows to 1
+matrix(3:4, :) = 1;
+
+% Set the middle two columns to 1
+matrix(:, 3:4) = 1;
+
+% Display the matrix
+disp(matrix);

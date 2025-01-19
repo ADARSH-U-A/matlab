@@ -1,0 +1,12 @@
+% Problem 7: Calculate worker's pay
+hours = input('Enter the number of hours worked: ');
+hourly_wage = input('Enter the hourly wage: ');
+
+if hours <= 40
+    pay = hours * hourly_wage;
+else
+    overtime_hours = hours - 40;
+    pay = (40 * hourly_wage) + (overtime_hours * hourly_wage * 1.5);
+end
+
+fprintf('The total pay is: $%.2f\n', pay);
